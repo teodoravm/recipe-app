@@ -1,42 +1,84 @@
-<h1 align="center">
-  <a href="https://64e1d9b4efff1a4d1b41a911--iridescent-crumble-ae2918.netlify.app/">
-    Recipe Generator App
-  </a>
-</h1>
+# ♿ React Accessibility Toolkit
 
-<p align="center">
- This is an app that generates a recipe based on the ingredients you have. <a href="https://64e1d9b4efff1a4d1b41a911--iridescent-crumble-ae2918.netlify.app/">Try it out</>
-</p>
+A lightweight React component library focused on improving web accessibility with minimal developer effort.
 
-## Built with
+> Empowering developers to build more inclusive and accessible web applications, following WCAG standards.
 
-- [React](http://reactjs.org)
-- [Spoonacular API](https://spoonacular.com/food-api)
-- [Chakra UI](https://chakra-ui.com/)
+---
 
-## Development
+## ✨ Features
 
-To get a local copy of the code, clone it using git:
+- ✅ **Auto-generated `alt` text** for images using AI (BLIP-based image captioning)
+- 🔊 **Screen reader-friendly alerts** with `aria-live` support
+- 🎯 **Keyboard navigation management** with focus utilities
+- 🚀 **"Skip to content"** functionality to improve navigation
+- 🧑‍🦯 **Visual elements with screen reader support**
 
-```
-git clone https://github.com/teodoravm/recipe-app
-cd recipe-app
-```
+---
 
-Install dependencies:
+## 📦 Installation
 
-```
-npm install
-```
+```bash
+npm install react-a11y-helper
 
-<p>
-  You can quickly generate an API key from <a href="https://spoonacular.com/food-api">Spoonacular</a> and place it in the code in order for the app to work.
-</p>
+## 🔧 Components
 
-Now, you can start a local web server by running:
+## AccessibleImage
 
-```
-npm start
-```
+The `AccessibleImage` component automatically generates alt text for images to improve accessibility. If no custom alt text is provided, it fetches a description of the image using an AI model.
 
-And then open http://localhost:3000 to view it in the browser.
+### Props:
+- `imageUrl` (required): The URL of the image.
+- `customAlt` (optional): Custom alt text.
+- `width` (optional): The width of the image.
+- `height` (optional): The height of the image.
+- `classes` (optional): Additional CSS classes for styling.
+
+---
+
+## AlertPlayer
+
+The `AlertPlayer` component announces dynamic content updates to screen readers via ARIA live regions. It ensures important information is conveyed to users in real-time.
+
+### Props:
+- `message` (required): The message to be announced.
+- `ariaLive` (optional): The announcement priority (`assertive` or `polite`).
+- `ariaAtomic` (optional): Controls whether the entire region should be read.
+- `delay` (optional): Delay before the message is announced.
+- `className` (optional): Custom CSS classes.
+
+---
+
+## SkipToContent
+
+The `SkipToContent` component renders a link that allows users to skip directly to the main content, improving navigation for keyboard and screen reader users.
+
+### Props:
+- `targetElementId` (required): The ID of the content to focus.
+- `label` (optional): Text for the link.
+- `classess` (optional): Custom CSS classes.
+
+---
+
+## SRVisual
+
+The `SRVisual` component makes content visible only to screen readers. It provides extra descriptions or context that are hidden visually but still accessible for assistive technologies.
+
+### Props:
+- `description` (required): Text description for screen readers.
+- `children` (optional): Optional content to be wrapped.
+
+---
+
+## FocusManager
+
+The `FocusManager` component manages focus within a defined scope, improving keyboard navigation and accessibility. It automatically focuses on elements as required, and handles focus when navigating inside the component.
+
+### Props:
+- `children` (required): The content to be managed by the FocusManager.
+- `fallbackElement` (required): The ID of the fallback element to focus.
+- `focusRectStyle` (optional): Custom style for the focus rectangle.
+- `classes` (optional): Additional CSS classes.
+
+---
+
