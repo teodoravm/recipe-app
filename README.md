@@ -1,4 +1,4 @@
-# ♿ React Accessibility Toolkit
+# ♿ React Accessibility Helper
 
 A lightweight React component library focused on improving web accessibility with minimal developer effort.
 
