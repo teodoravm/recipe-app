@@ -18,7 +18,6 @@ A lightweight React component library focused on improving web accessibility wit
 
 ## 📦 Installation
 
-```bash
 npm install react-a11y-helper
 
 ## 🔧 Components
